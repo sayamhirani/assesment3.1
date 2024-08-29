@@ -1,6 +1,6 @@
 /*
 # This project is based on a public project but has been modified 
-# according to the requirements of the DevOps Level 2 course.
+# according to the requirements of the IST 107 Course.
 # Instructor: Washington Valencia
 # Institution: CCTB College
 */
@@ -288,7 +288,7 @@ function initialize() {
         myGrid.cells[i] = 0;
     }
     // setTimeout(assignRoles, 500);
-    setTimeout(showOptions, 500);
+    setInterval(showOptions, 500);
     // debugger;
 }
 
@@ -332,7 +332,7 @@ function cellClicked(id) {
         return false;
     }
     moves += 1;
-    document.getElementById(id).innerHTML = "playerText";
+    document.getElementById(id).innerHTML = playerText;
     // randomize orientation (for looks only)
     var rand = Math.random();
     if (rand < 0.3) {
@@ -639,7 +639,7 @@ function closeModal(id) {
 
 function endGame(who) {
     if (who == player) {
-        announceWinner("Congratulations, you won!");
+        announceWinner("Congratulations, [Your name] won!");
     } else if (who == computer) {
         announceWinner("Computer wins!");
     } else {
